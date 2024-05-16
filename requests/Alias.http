@@ -1,0 +1,19 @@
+GRAPHQL localhost:4000
+
+query {
+    contacts {
+        data: gets(searchText: "") {
+            contact_id
+            name
+            first_name
+            last_name
+            gender_id
+            dob
+            email
+            phone
+            address
+            photo_path
+            created_at
+        }
+    }
+}

@@ -1,0 +1,9 @@
+GRAPHQL localhost:4000
+
+{
+    images{
+        get {
+            image_url
+        }
+    }
+}

@@ -1,0 +1,18 @@
+GRAPHQL localhost:4000/graphql
+
+query {
+    contacts {
+        data: getPagination(searchText: "", page: 2, pageSize: 1) {
+            contacts {
+                contact_id
+                name
+            }
+            pagination {
+                page
+                totalItems
+                totalPages
+                hasNext
+            }
+        }
+    }
+}

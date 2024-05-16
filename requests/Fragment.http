@@ -1,0 +1,44 @@
+GRAPHQL http://localhost:4000/graphql
+
+fragment TicketDetails on Ticket {
+    ticket_id
+    type
+    price
+    event_id
+    created_at
+    created_by
+}
+
+fragment EventDetails on Event {
+    event_id
+    parent_event_id
+    name
+    description
+    start_date
+    end_date
+    location_id
+    created_at
+    created_by
+}
+
+query GetTicketEvent($standard: String!, $vip: String!, $isSkip: Boolean!, $isInclude: Boolean!) {
+
+    ticketEvents {
+        standards: gets(searchText: $standard) {
+            ticket {
+                ...TicketDetails
+            }
+            event {
+                ...EventDetails
+            }
+        }
+        vips: gets(searchText: $vip) {
+            ticket {
+                ...TicketDetails
+            }
+            event {
+                ...EventDetails
+            }
+        }
+    }
+}

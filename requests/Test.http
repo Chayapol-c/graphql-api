@@ -1,0 +1,81 @@
+GRAPHQL http://localhost:4000/graphql
+
+#mutation ($name: String = "NewName") {
+#    createEvent(name: $name)
+#}
+
+mutation {
+    createEvent(name: "New Name2")
+}
+
+#
+query {
+    contacts {
+        gets(searchText: "") {
+            name
+            first_name
+            last_name
+            gender_id
+            dob
+            email
+            phone
+            address
+            photo_path
+            created_at
+            created_by
+        }
+    }
+}
+
+query {
+    images{
+        get {
+            image_url
+        }
+    }
+}
+
+query {
+    contacts {
+        data: gets(searchText: "") {
+            contact_id
+            name
+            first_name
+            last_name
+            gender_id
+            dob
+            email
+            phone
+            address
+            photo_path
+            created_at
+        }
+    }
+}
+
+query {
+    ticketEvents {
+        gets(searchText: "") {
+            ticket {
+                ticket_id
+                type
+                price
+                event_id
+                created_at
+                created_by
+            }
+            event {
+                event_id
+                parent_event_id
+                name
+                description
+                start_date
+                end_date
+                location_id
+                created_at
+                created_by
+            }
+        }
+    }
+}
+

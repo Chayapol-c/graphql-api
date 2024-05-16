@@ -1,0 +1,27 @@
+GRAPHQL localhost:4000
+
+{
+    ticketEvents {
+        gets(searchText: "") {
+            ticket {
+                ticket_id
+                type
+                price
+                event_id
+                created_at
+                created_by
+            }
+            event {
+                event_id
+                parent_event_id
+                name
+                description
+                start_date
+                end_date
+                location_id
+                created_at
+                created_by
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+GRAPHQL http://localhost:4000/graphql
+
+
+query {
+    __type(name: "Ticket") {
+        name
+        fields {
+            name
+            type {
+                name
+                kind
+            }
+        }
+    }
+}
+
+query {
+    __schema {
+        types {
+            name
+        }
+    }
+}
